@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fall Fun Day – Event Info</title>
+  <meta name="description" content="Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.">
+  <meta property="og:title" content="Fall Fun Day">
+  <meta property="og:description" content="Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root { --accent: #103242; --ink:#121212; --bg:#f9f5e9; --gold:#988350; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--ink);}
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
+    .card { background:#fff; border:1px solid #e6e2d9; border-radius: 16px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+    h1 { margin:0 0 4px; font-size: 28px; color: var(--accent);}
+    h2 { margin:0 0 16px; font-weight: 500; font-size: 18px; color: var(--gold);}
+    .grid { display:grid; gap:12px; grid-template-columns: 1fr; }
+    .info { display: grid; gap: 6px; margin: 12px 0 16px; }
+    .label { font-weight:600; }
+    .btns { display:flex; flex-wrap:wrap; gap:10px; margin-top: 8px; }
+    a.btn { display:inline-block; padding:10px 14px; border-radius: 10px; border:1px solid #d7d2c9; text-decoration:none; color:var(--ink); background:#fff; }
+    a.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent);}
+    a.btn.outline { border-color: var(--accent); }
+    .small { font-size: 14px; color:#555; }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: 1.2fr .8fr; align-items: start; }
+    }
+    .panel { background:#fcfbf8; border:1px dashed #d7d2c9; border-radius: 12px; padding: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="grid">
+        <div>
+          <h1>Fall Fun Day</h1>
+          <h2>Games, snacks, and crafts for kids 5–8</h2>
+          <div class="info">
+            <div><span class="label">When:</span> Sat, Oct 25, 2025 — 1:00–4:00 PM</div>
+            <div><span class="label">Where:</span> Upper St. Clair Community Park, 123 Example Rd, Upper St. Clair, PA</div>
+          </div>
+          <p>Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.</p>
+          <div class="btns">
+            <a class="btn primary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fall%20Fun%20Day&dates=20251025T170000Z/20251025T200000Z&details=Join%20us%20for%20a%20relaxed%20afternoon%E2%80%94come%20and%20go%20as%20you%20can.%20RSVP%20on%20the%20form%3B%20add%20to%20your%20calendar%20below.&location=Upper%20St.%20Clair%20Community%20Park%2C%20123%20Example%20Rd%2C%20Upper%20St.%20Clair%2C%20PA" target="_blank" rel="noopener">Add to Google Calendar</a>
+            <a class="btn outline" href="./event.ics" download>Download .ICS</a>
+            <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">RSVP Form</a>
+          </div>
+          <p class="small">Tip: After adding to your calendar, share this page with other families.</p>
+        </div>
+        <div class="panel">
+          <div class="small"><strong>What to expect</strong><br>Snacks, crafts, and casual games. Siblings welcome. Come and go anytime.</div>
+          <div class="small" style="margin-top:8px;"><strong>Questions?</strong><br><a href="mailto:you@example.com">you@example.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

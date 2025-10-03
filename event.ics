@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Andrew Brulia//Event//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20251003T182139Z@brulia-event
+DTSTAMP:20251003T182139Z
+DTSTART:20251025T170000Z
+DTEND:20251025T200000Z
+SUMMARY:Fall Fun Day
+DESCRIPTION:Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.
+LOCATION:Upper St. Clair Community Park, 123 Example Rd, Upper St. Clair, PA
+END:VEVENT
+END:VCALENDAR
