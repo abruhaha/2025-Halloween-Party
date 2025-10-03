@@ -3,32 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fall Fun Day – Event Info</title>
+  <title>Halloween Fun – Event Info</title>
   <meta name="description" content="Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.">
-  <meta property="og:title" content="Fall Fun Day">
-  <meta property="og:description" content="Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.">
+  <meta property="og:title" content="Halloween Fun">
+  <meta property="og:description" content="Join us for a relaxed afternoon—come and go as you can. RSVP; add to your calendar below.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <style>
     :root { --accent: #103242; --ink:#121212; --bg:#f9f5e9; --gold:#988350; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--ink);}
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,.85), 0 3px 12px rgba(0,0,0,.85), 0 0 2px rgba(0,0,0,.85); }
     .wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
-    .card { background:#fff; border:1px solid #e6e2d9; border-radius: 16px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
-    h1 { margin:0 0 4px; font-size: 28px; color: var(--accent);}
-    h2 { margin:0 0 16px; font-weight: 500; font-size: 18px; color: var(--gold);}
+    .card { background:#fff; border:1px solid #e6e2d9; border-radius: 16px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.06); 
+            position: relative;           /* lets us layer an overlay */
+            position: relative; z-index:1;
+            overflow: hidden;
+            background-image: url('./imgs/801.webp');  /* <= your image */
+            background-size: cover;
+            background-position: center 35%;           /* adjust 0–100% as needed */
+          }
+    h1 { margin:0 0 4px; font-size: 28px; color: var(--bg); text-shadow: 0 3px 12px rgba(0,0,0,.55), 0 1px 0 rgba(0,0,0,.45);}
+    h2 { margin:0 0 16px; font-weight: 500; font-size: 18px; color: var(--gold); text-shadow: 0 3px 8px rgba(0,0,0,.60); }
+    .info, .btns a.btn { text-shadow: 0 1px 4px rgba(0,0,0,.35);}
     .grid { display:grid; gap:12px; grid-template-columns: 1fr; }
     .info { display: grid; gap: 6px; margin: 12px 0 16px; }
-    .label { font-weight:600; }
+    .label { font-weight:600; text-shadow: 0 1px 0 rgba(0,0,0,.85), 0 3px 12px rgba(0,0,0,.85), 0 0 2px rgba(0,0,0,.85); }
+    /*.labelgold { font-weight:600; color: var(--gold);  text-shadow: 0 3px 8px rgba(0,0,0,.55);}*/
+    .labelgold{ font-weight:700; color: var(--gold); text-shadow: 0 1px 0 rgba(0,0,0,.85), 0 3px 12px rgba(0,0,0,.85), 0 0 2px rgba(0,0,0,.85); }
     .btns { display:flex; flex-wrap:wrap; gap:10px; margin-top: 8px; }
-    a.btn { display:inline-block; padding:10px 14px; border-radius: 10px; border:1px solid #d7d2c9; text-decoration:none; color:var(--ink); background:#fff; }
-    a.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent);}
-    a.btn.outline { border-color: var(--accent); }
+    a.btn { display:inline-block; padding:10px 14px; border-radius: 10px; border:1px solid; border-color: #d7d2c9; text-decoration:none; color:var(--ink); background:#fff; }
+    /*a.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent);}*/
+    a.btn.primary, a.btn.outline { background: var(--accent); var(--accent); color: #fff; border-color: var(--accent); transition:background .2s ease, color .2s ease, border-color .2s ease, transform .15s ease, box-shadow .15s ease; }
+a.btn.primary:hover, a.btn.outline:hover{ background: rgba(16, 50, 66, 0.6); /* 60% opacity navy */ color: #fff;/* stays white for contrast */ border-color: var(--gold); }
+a.btn:hover{ background: rgba(255,255,255,.88); border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold), 0 6px 16px rgba(0,0,0,.20);
+  /*background: rgba(255,255,255,.88); border-color: var(--gold);*/ }
+    /*a.btn.primary:hover{ filter: brightness(1.06); }*/
+   /* a.btn.outline:hover{ background: rgba(255,255,255,.88); }*/
     .small { font-size: 14px; color:#555; }
     @media (min-width: 640px) {
       .grid { grid-template-columns: 1.2fr .8fr; align-items: start; }
     }
-    .panel { background:#fcfbf8; border:1px dashed #d7d2c9; border-radius: 12px; padding: 12px; }
+    .panel { background:#fcfbf8; border:1px dashed #d7d2c9; border-radius: 12px; padding: 12px; 
+      background: rgba(249,245,233,.80);  /* bone @ 80% */
+      border: 1px solid rgba(16,50,66,.10);
+      border-radius: 12px;
+      padding: 12px;
+      backdrop-filter: blur(2px);         /* graceful if unsupported */
+    }
+        /* overlay on top of the image, behind your content 
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(0deg, rgba(16,50,66,.60), rgba(16,50,66,.30));
+      pointer-events:none;
+      z-index:0;
+    }*/
+    .bone { color: var(--gold); }
+    .nvytxt { color: var(--accent); text-shadow: none; }
+    .card ul { color:#fff; text-shadow: 0 1px 0 rgba(0,0,0,.85), 0 3px 12px rgba(0,0,0,.85), 0 0 2px rgba(0,0,0,.85);  }
+    .small { color: rgba(255,255,255,.92); }
+    .label { color:#fff; }         /* keeps “Sat, Oct 25…” readable */
+    .nodrp { color: #103242; text-shadow: none; text-decoration: underline; font-weight: 700;}
+/* make the card's children sit above the overlay */
   </style>
 </head>
 <body>
@@ -36,23 +73,31 @@
     <div class="card">
       <div class="grid">
         <div>
-          <h1>Fall Fun Day</h1>
-          <h2>Games, snacks, and crafts for kids 5–8</h2>
+          <h1>Halloween Fun</h1>
+          <h2>Family Costume Party</h2>
           <div class="info">
-            <div><span class="label">When:</span> Sat, Oct 25, 2025 — 1:00–4:00 PM</div>
-            <div><span class="label">Where:</span> Upper St. Clair Community Park, 123 Example Rd, Upper St. Clair, PA</div>
+            <div><span class="labelgold">When:</span> <span class="label">Sat, Oct 25, 2025 1:00–4:00 PM</span></div>
+            <div><span class="labelgold">Where:</span> <span class="label">1551 Mayview Road, 15241</br>
+              The Pavilion @ Boyce Mayview Park</span>
+            </div>
           </div>
-          <p>Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.</p>
+          <p> Add to your calendar, and RSVP, below:</p>
           <div class="btns">
             <a class="btn primary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fall%20Fun%20Day&dates=20251025T170000Z/20251025T200000Z&details=Join%20us%20for%20a%20relaxed%20afternoon%E2%80%94come%20and%20go%20as%20you%20can.%20RSVP%20on%20the%20form%3B%20add%20to%20your%20calendar%20below.&location=Upper%20St.%20Clair%20Community%20Park%2C%20123%20Example%20Rd%2C%20Upper%20St.%20Clair%2C%20PA" target="_blank" rel="noopener">Add to Google Calendar</a>
-            <a class="btn outline" href="./event.ics" download>Download .ICS</a>
-            <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">RSVP Form</a>
+            <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">RSVP</a>
+            <a class="btn outline" href="./event.ics" download>Apple/Outlook Calendar</a>
           </div>
-          <p class="small">Tip: After adding to your calendar, share this page with other families.</p>
+          <p class="small">Join us for a relaxed afternoon—come and go as you can.
+            <ul><li>Costumes encouraged for kids and adults! Let's see your best spooky, silly, or creative costumes!</li>
+              <li>Families Welcome! Siblings, Grand Parents, etc. </li>
+              <li>Parents, please plan to stay and join the fun.</li>
+              <li>Bring a snack to share: Spooky-healthy or spooky-sweet, we'd love to have a mix!</li>
+            </ul>
+          </p>
         </div>
         <div class="panel">
-          <div class="small"><strong>What to expect</strong><br>Snacks, crafts, and casual games. Siblings welcome. Come and go anytime.</div>
-          <div class="small" style="margin-top:8px;"><strong>Questions?</strong><br><a href="mailto:you@example.com">you@example.com</a></div>
+          <div class="small, nvytxt"><strong class="bone">What to expect</strong><br>Snacks, crafts, music, and casual games. Siblings welcome. Come and go anytime.</div>
+          <div class="small, nvytxt" style="margin-top:8px;"><strong class="bone">Questions?</strong><br><a href="mailto:abrulia@gmail.com" class="nodrp">abrulia@gmail.com</a> or text Danyelle +1-412-606-1994</div>
         </div>
       </div>
     </div>
