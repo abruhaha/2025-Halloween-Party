@@ -1,14 +1,15 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Andrew Brulia//Event//EN
+PRODID:-//Brulia//Halloween Fun//EN
 CALSCALE:GREGORIAN
+METHOD:PUBLISH
 BEGIN:VEVENT
-UID:20251003T182139Z@brulia-event
-DTSTAMP:20251003T182139Z
+UID:20251025-halloween@brulia
+DTSTAMP:20251004T150000Z
 DTSTART:20251025T170000Z
 DTEND:20251025T200000Z
-SUMMARY:Fall Fun Day
-DESCRIPTION:Join us for a relaxed afternoon—come and go as you can. RSVP on the form; add to your calendar below.
-LOCATION:Upper St. Clair Community Park, 123 Example Rd, Upper St. Clair, PA
+SUMMARY:Halloween Fun – Family Costume Party
+LOCATION:The Pavilion @ Boyce Mayview Park\, 1551 Mayview Road\, Upper St. Clair\, PA 15241
+DESCRIPTION:Remember to RSVP: https://docs.google.com/forms/d/e/1FAIpQLSdVCehQEgOXV5e3hjxu0n-qxJtTWb6onkqtqgc8bxbQqc3tvw/viewform\nOr\nText Danyelle: sms:+14126061994\nJoin us for a relaxed afternoon—come and go as you can.\n- Costumes encouraged for all!\n- Families welcome.\n- Parents, please plan to stay and join the fun with your kid(s).\n- Bring a snack to share.
 END:VEVENT
 END:VCALENDAR
